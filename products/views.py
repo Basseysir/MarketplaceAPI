@@ -8,6 +8,8 @@ from rest_framework.filters import SearchFilter, OrderingFilter
 from .filters import ProductFilter
 from rest_framework.parsers import JSONParser
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from .models import Category
+from .serializers import CategorySerializer
 
 # Create your views here.
 
@@ -47,3 +49,9 @@ class ProductViewSet(viewsets.ModelViewSet):
         serializer.save(
             seller=self.request.user.seller_profile
         )
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
+    
