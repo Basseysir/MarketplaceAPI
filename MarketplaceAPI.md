@@ -136,9 +136,9 @@ Authorization: Bearer <access_token>
 |----------|--------|-------------|
 | `/api/cart/` | GET | View Cart |
 | `/api/cart/add/` | POST | Add Product |
-| `/api/cart/update/{id}/` | PATCH | Update Quantity |
-| `/api/cart/remove/{id}/` | DELETE | Remove Item |
-| `/api/cart/clear/` | DELETE | Clear Cart |
+| `/api/cart/item/{id}/` | PATCH | Update Quantity |
+| `/api/cart/item/{id}/` | DELETE | Remove Item |
+| `/api/cart/item/` | DELETE | Clear Cart |
 
 ---
 
@@ -149,7 +149,7 @@ Authorization: Bearer <access_token>
 | `/api/orders/checkout/` | POST | Checkout |
 | `/api/orders/my-orders/` | GET | Buyer Orders |
 | `/api/orders/seller-orders/` | GET | Seller Orders |
-| `/api/orders/update/{id}/` | PATCH | Update Seller Order |
+| `/api/orders/seller-orders/{id}/` | PATCH | Update Seller Order |
 
 ---
 

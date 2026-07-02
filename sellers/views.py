@@ -1,6 +1,6 @@
 from django.shortcuts import render
-
-# Create your views here.
+from orders.models import SellerOrder
+from products.models import Product
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -9,6 +9,9 @@ from rest_framework import status
 from .models import SellerProfile
 from .serializers import SellerProfileSerializer
 
+
+
+# Create your views here.
 
 class SellerProfileView(APIView):
 
@@ -58,3 +61,52 @@ class SellerProfileView(APIView):
         serializer.save()
 
         return Response(serializer.data)
+
+
+class SellerDashboardView(APIView):
+
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+
+        seller = request.user.seller_profile
+
+        total_products = Product.objects.filter(
+            seller=seller
+        ).count()
+
+        total_orders = SellerOrder.objects.filter(
+            seller=seller
+        ).count()
+
+        pending_orders = SellerOrder.objects.filter(
+            seller=seller,
+            status="pending"
+        ).count()
+
+        processing_orders = SellerOrder.objects.filter(
+            seller=seller,
+            status="processing"
+        ).count()
+
+        delivered_orders = SellerOrder.objects.filter(
+            seller=seller,
+            status="delivered"
+        ).count()
+
+        revenue = sum(
+            order.subtotal
+            for order in SellerOrder.objects.filter(
+                seller=seller,
+                status="delivered"
+            )
+        )
+
+        return Response({
+            "total_products": total_products,
+            "total_orders": total_orders,
+            "pending_orders": pending_orders,
+            "processing_orders": processing_orders,
+            "delivered_orders": delivered_orders,
+            "revenue": revenue
+        })

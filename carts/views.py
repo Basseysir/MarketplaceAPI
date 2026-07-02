@@ -29,7 +29,7 @@ class AddToCartView(APIView):
         product_id = request.data.get("product_id")
         quantity = int(request.data.get("quantity", 1))
 
-        product = Product.objects.get(id=product_id)
+        product = get_object_or_404(Product, id=product_id)
 
         item, created = CartItem.objects.get_or_create(
             cart=request.user.cart,
