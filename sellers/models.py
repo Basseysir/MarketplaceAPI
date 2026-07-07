@@ -4,11 +4,7 @@ from django.conf import settings
 # Create your models here.
 
 class SellerProfile(models.Model):
-    user = models.OneToOneField(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE,
-        related_name="seller_profile"
-    )
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="seller_profile")
 
     shop_name = models.CharField(max_length=100)
     bio = models.TextField(blank=True)

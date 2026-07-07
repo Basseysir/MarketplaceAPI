@@ -1,12 +1,12 @@
-# 🛒 Marketplace API
+# 🛒 Marketplace Backend System 
 
-A **Multi-Vendor Marketplace REST API** built with **Django REST Framework (DRF)** that enables buyers and sellers to interact on a single platform. Buyers can browse products, manage carts, and place orders, while sellers can manage products, receive customer orders, and monitor sales through a dashboard.
+A **Multi-Vendor Marketplace Backend System** built with **Django REST Framework (DRF)** that enables buyers and sellers to interact on a single platform. Buyers can browse products, manage carts, and place orders, while sellers can manage products, receive customer orders, and monitor sales through a dashboard.
 
 ---
 
-# 📌 Features
+## Features
 
-## 🔐 Authentication
+## Authentication
 
 - User Registration
 - JWT Login
@@ -15,7 +15,7 @@ A **Multi-Vendor Marketplace REST API** built with **Django REST Framework (DRF)
 
 ---
 
-## 👥 User Roles
+## User Roles
 
 ### Buyer
 
@@ -43,7 +43,7 @@ A **Multi-Vendor Marketplace REST API** built with **Django REST Framework (DRF)
 
 ---
 
-# 🚀 Technologies Used
+## Technologies Used
 
 - Python 3
 - Django
@@ -56,7 +56,7 @@ A **Multi-Vendor Marketplace REST API** built with **Django REST Framework (DRF)
 
 ---
 
-# 📂 Project Structure
+## Project Structure
 
 ```
 MarketplaceAPI/
@@ -74,7 +74,7 @@ MarketplaceAPI/
 
 ---
 
-# 🔐 Authentication
+## Authentication
 
 This project uses **JWT Authentication**.
 
@@ -86,7 +86,7 @@ Authorization: Bearer <access_token>
 
 ---
 
-# 📡 API Endpoints
+## API Endpoints
 
 ## Authentication
 
@@ -153,7 +153,7 @@ Authorization: Bearer <access_token>
 
 ---
 
-# 🔍 Product Search & Filters
+## Product Search & Filters
 
 ### Search
 
@@ -176,7 +176,7 @@ GET /api/products/?max_price=1000
 
 ---
 
-# 🛍 Checkout Workflow
+## Checkout Workflow
 
 ```
 Buyer
@@ -256,7 +256,7 @@ Clear Cart
 
 ---
 
-# 📧 Email Notifications
+## Email Notifications
 
 ### Buyer
 
@@ -279,7 +279,7 @@ Each seller receives:
 
 ---
 
-# 🗃 Database Relationships
+## Database Relationships
 
 ```
 User
@@ -313,7 +313,7 @@ Buyer
 
 ---
 
-# 📊 Seller Dashboard
+## Seller Dashboard
 
 Displays:
 
@@ -327,7 +327,7 @@ Displays:
 
 ---
 
-# ✅ Completed Features
+## Completed Features
 
 - JWT Authentication
 - Buyer & Seller Roles
@@ -346,19 +346,11 @@ Displays:
 - Seller Email Notifications
 - Role-Based Permissions
 
----
 
-# 🧪 Testing
-
-The API was tested using **Postman**.
-
-
-# 👨‍💻 Author
+## Author
 
 **Ekanem Ekanem**
 
 Backend Developer | Django REST Framework Developer
 
 ---
-
-## ⭐ If you found this project helpful, consider giving it a star!
